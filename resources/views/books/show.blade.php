@@ -6,14 +6,20 @@
       <div class="book-author mb-4 text-lg font-semibold">Autor{{ $book->author }}</div>
       <div class="book-rating flex items-center">
         <div class="mr-2 text-sm font-medium text-slate-700">
-          {{ number_format($book->reviews_avg_rating, 1) }}
+         Ocena {{ number_format($book->reviews_avg_rating, 1) }}
         </div>
         <span class="book-review-count text-sm text-gray-500">
-          {{ $book->reviews_count }}
+         Ilość opini {{ $book->reviews_count }}
         </span>
       </div>
     </div>
   </div>
+
+  <div class="mb-4">
+    <a href="{{ route('books.reviews.create', $book) }}" class="reset-link">
+      Dodaj opinię!</a>
+  </div>
+
   <div>
     <h2 class="mb-4 text-xl font-semibold">Recenzje</h2>
     <ul>
